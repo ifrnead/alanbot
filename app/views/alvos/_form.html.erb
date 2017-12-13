@@ -1,0 +1,22 @@
+<%= form_with(model: alvo, local: true) do |form| %>
+  <% if alvo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(alvo.errors.count, "error") %> prohibited this alvo from being saved:</h2>
+
+      <ul>
+      <% alvo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :alvo_nome %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

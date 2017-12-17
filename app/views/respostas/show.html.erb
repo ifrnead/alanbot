@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mensagem:</strong>
+  <%= @resposta.mensagem %>
+</p>
+
+<p>
+  <strong>Alvo:</strong>
+  <%= @resposta.alvo.nome %>
+</p>
+
+<p>
+  <strong>Informação:</strong>
+  <%= @resposta.informacao.tipo %>
+</p>
+
+<%= link_to 'Editar', edit_resposta_path(@resposta) ,class: "btn btn-warning"%> 
+<%= link_to 'Voltar', respostas_path ,class: "btn btn-success"%>

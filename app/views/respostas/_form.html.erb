@@ -1,0 +1,32 @@
+<%= form_for(@resposta) do |form| %>
+  <% if resposta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resposta.errors.count, "error") %> prohibited this resposta from being saved:</h2>
+
+      <ul>
+      <% resposta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field  form-group" >
+    <%= form.label :mensagem %>
+    <%= form.text_field :mensagem, class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+		<%= form.label :alvo %>
+		<%= form.select :alvo_id, Alvo.select, { prompt: 'Selecione' }, { class: "form-control"} %>
+	</div>
+	
+  <div class="form-group">
+		<%= form.label :informacao, 'Informação' %>
+		<%= form.select :informacao_id, Informacao.select(label: 'tipo'), { prompt: 'Selecione' }, { class: "form-control"} %>
+	</div>
+
+  <div class="actions form-group">
+    <%= form.submit 'Enviar', class: 'btn btn-default'%>
+  </div>
+<% end %>

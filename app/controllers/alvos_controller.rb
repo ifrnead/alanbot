@@ -7,6 +7,14 @@ class AlvosController < ApplicationController
   def edit
   end
 
+  def destroy
+    @alvo.destroy
+    respond_to do |format|
+      format.html { redirect_to alvos_url, notice: 'Alvo was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   def show
   end
 
@@ -29,7 +37,7 @@ class AlvosController < ApplicationController
     end
   end
   
-    def update
+  def update
     respond_to do |format|
       if @alvo.update(alvo_params)
         format.html { redirect_to @alvo, notice: 'Alvo was successfully updated.' }
@@ -42,13 +50,7 @@ class AlvosController < ApplicationController
   end
   
   
-    def destroy
-    @alvo.destroy
-    respond_to do |format|
-      format.html { redirect_to alvos_url, notice: 'Alvo was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+ 
   
   private
     # Use callbacks to share common setup or constraints between actions.

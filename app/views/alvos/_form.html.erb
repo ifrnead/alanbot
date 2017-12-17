@@ -1,4 +1,4 @@
-<%= form_with(model: alvo, local: true) do |form| %>
+<%= form_with(model: alvo, local: true, :html => {:class => "form-inline"}) do |form| %>
   <% if alvo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(alvo.errors.count, "error") %> prohibited this alvo from being saved:</h2>
@@ -11,12 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, id: :alvo_nome %>
+  <div class="field form-group">
+    <%= form.label :Alvo %>
+    <%= form.text_field :nome, id: :alvo_nome ,class: "form-control"%>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div></div>
+  <div class="actions form-group" >
+    <%= form.submit :Submit, class: 'btn btn-default' %>
   </div>
+  
 <% end %>

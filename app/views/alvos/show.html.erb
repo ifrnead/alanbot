@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Alvo</h1>
 <p>
-  <strong>Nome:</strong>
+  <strong>Alvo:</strong>
   <%= @alvo.nome %>
 </p>
 
-<%= link_to 'Edit', edit_alvo_path(@alvo) %> |
-<%= link_to 'Back', alvos_path %>
+<%= link_to 'Editar', edit_alvo_path(@alvo),class: "btn btn-warning" %> 
+<%= link_to 'Voltar', alvos_path,class: "btn btn-success" %>

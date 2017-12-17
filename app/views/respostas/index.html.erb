@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row"></div>
+<h1>Respostas</h1>
+
+<table class="table table-striped table-bordered   table-hover">
+  <thead>
+    <tr>
+      <th>Mensagem</th>
+      <th>Alvo</th>
+      <th>Informacao</th>
+      <th>Ver</th>
+      <th>Editar</th>
+      <th>Deletar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @respostas.each do |resposta| %>
+      <tr>
+        <td><%= resposta.mensagem %></td>
+        <td><%= resposta.alvo.nome %></td>
+        <td><%= resposta.informacao.tipo %></td>
+        <td><%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, resposta %></td>
+        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_resposta_path(resposta) %></td>
+        <td><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, resposta, method: :delete, data: { confirm: 'Tem certeza ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Criar Nova Resposta', new_resposta_path,class: "btn btn-primary"%>
+<%= link_to 'Voltar Para Página Inicial', root_path,class: "btn btn-success" %>

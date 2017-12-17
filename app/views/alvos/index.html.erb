@@ -1,27 +1,34 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Alvos</h1>
+<p id="notice" ><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @alvos.each do |alvo| %>
+<div class="row"></div>
+  <h1 class="">Alvos</h1>
+  
+  <table class="table table-striped table-bordered   table-hover">
+    <thead class="">
       <tr>
-        <td><%= alvo.nome %></td>
-        <td><%= link_to 'Show', alvo %></td>
-        <td><%= link_to 'Edit', edit_alvo_path(alvo) %></td>
-        <td><%= link_to 'Destroy', alvo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Alvo</th>
+        <th>Ver</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+              
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @alvos.each do |alvo| %>
+        <tr>
+          <td><%= alvo.nome %></td>
+          <td><%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, alvo %></td>
+          <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_alvo_path(alvo) %></td>
+          <td><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, alvo_path(alvo), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
 
-<br>
-
-<%= link_to 'New Alvo', new_alvo_path %>
+<%= link_to 'Criar Novo Alvo', new_alvo_path ,class: "btn btn-primary"%>
+<%= link_to 'Voltar Para Página Inicial', root_path,class: "btn btn-success" %>

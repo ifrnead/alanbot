@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20171129172054) do
 
   create_table "respostas", force: :cascade do |t|
     t.bigint "alvo_id"
-    t.bigint "informacao_id"
+    t.bigint " = "
     t.text "mensagem"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

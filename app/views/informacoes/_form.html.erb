@@ -1,4 +1,4 @@
-<%= form_with(model: informacao, local: true) do |form| %>
+<%= form_with(model: informacao, local: true, :html => {:class => "form-inline"}) do |form| %>
   <% if informacao.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(informacao.errors.count, "error") %> prohibited this informacao from being saved:</h2>
@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :tipo %>
-    <%= form.text_field :tipo, id: :informacao_tipo %>
+    <%= form.text_field :tipo, id: :informacao_tipo ,class: "form-control"%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions  form-group">
+    <%= form.submit :Submit, class: 'btn btn-default'%>
   </div>
 <% end %>

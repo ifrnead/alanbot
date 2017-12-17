@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Informação</h1>
 <p>
   <strong>Tipo:</strong>
   <%= @informacao.tipo %>
 </p>
 
-<%= link_to 'Edit', edit_informacao_path(@informacao) %> |
-<%= link_to 'Back', informacoes_path %>
+<%= link_to 'Editar', edit_informacao_path(@informacao),class: "btn btn-warning" %> 
+<%= link_to 'Voltar', informacoes_path,class: "btn btn-success" %>
+
+
+
+

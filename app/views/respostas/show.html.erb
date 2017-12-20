@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Resposta</h1>
 <p>
   <strong>Mensagem:</strong>
   <%= @resposta.mensagem %>
@@ -15,5 +15,5 @@
   <%= @resposta.informacao.tipo %>
 </p>
 
-<%= link_to 'Editar', edit_resposta_path(@resposta) ,class: "btn btn-warning"%> 
-<%= link_to 'Voltar', respostas_path ,class: "btn btn-success"%>
+<%= link_to 'Editar', edit_resposta_path(@resposta) ,class: "btn btn-outline-info"%> 
+<%= link_to 'Voltar', respostas_path ,class: "btn btn-outline-info"%>

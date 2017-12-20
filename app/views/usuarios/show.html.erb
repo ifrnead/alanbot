@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h1>Usuário</h1>
+<p>
+  <strong>Matricula:</strong>
+  <%= @usuario.matricula %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @usuario.token %>
+</p>
+
+<%= link_to 'Editar', edit_usuario_path(@usuario) ,class: "btn btn-outline-info"%> 
+<%= link_to 'Voltar', usuarios_path ,class: "btn btn-outline-info"%>

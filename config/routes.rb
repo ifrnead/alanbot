@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sessoes/new'
+
+  resources :usuarios
     root 'dashboard#index'
     
     resources :respostas

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129172054) do
+ActiveRecord::Schema.define(version: 20171218002727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,12 +29,19 @@ ActiveRecord::Schema.define(version: 20171129172054) do
 
   create_table "respostas", force: :cascade do |t|
     t.bigint "alvo_id"
-    t.bigint " = "
+    t.bigint "informacao_id"
     t.text "mensagem"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["alvo_id"], name: "index_respostas_on_alvo_id"
     t.index ["informacao_id"], name: "index_respostas_on_informacao_id"
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "matricula"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "respostas", "alvos"

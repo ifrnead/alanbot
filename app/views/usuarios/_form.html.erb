@@ -1,0 +1,27 @@
+<%= form_with(model: usuario, local: true) do |form| %>
+  <% if usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% usuario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :matricula %>
+    <%= form.text_field :matricula, id: :usuario_matricula ,  class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :token %>
+    <%= form.text_field :token, id: :usuario_token ,  class: 'form-control' %>
+  </div>
+
+  <div class="actions form-group">
+    <%= form.submit :Salvar,  class: 'btn btn-outline-info '%>
+  </div>
+<% end %>

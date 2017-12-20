@@ -21,9 +21,13 @@
         <td><%= resposta.mensagem %></td>
         <td><%= resposta.alvo.nome %></td>
         <td><%= resposta.informacao.tipo %></td>
-        <td><%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, resposta %></td>
-        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_resposta_path(resposta) %></td>
-        <td><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, resposta, method: :delete, data: { confirm: 'Tem certeza ?' } %></td>
+        <td><%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, resposta ,{class: "del_hover"} %></td>
+        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_resposta_path(resposta) ,{class: "del_hover"}%></td>
+        <td>
+          <%= link_to resposta , method: :delete, data: { confirm: 'Tem certeza?' },class:"del_hover" do %>
+            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -31,5 +35,5 @@
 
 <br>
 
-<%= link_to 'Criar Nova Resposta', new_resposta_path,class: "btn btn-primary"%>
-<%= link_to 'Voltar Para Página Inicial', root_path,class: "btn btn-success" %>
+<%= link_to 'Criar Nova Resposta', new_resposta_path,class: "btn btn-outline-info"%>
+<%= link_to 'Voltar Para Página Inicial', root_path,class: "btn btn-outline-info" %>

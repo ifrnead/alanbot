@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessoes/new'
-
+  root 'sessoes#new'
+  post 'sessoes/logar'
   resources :usuarios
-    root 'dashboard#index'
+   get 'dashboard/index'
     
     resources :respostas
     

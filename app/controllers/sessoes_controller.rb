@@ -6,12 +6,13 @@ class SessoesController < ApplicationController
   
   def logar
     @usuario = Usuario.autenticar( matricula: params[:matricula], senha: params[:senha])
-    puts @usuario
+    
     if @usuario
-       flash[:notice] = "Seja bem vindo!"
-       redirect_to :dashboard_index
+      session[:usuario_id] = @usuario.id
+      flash[:notice] = "Seja bem vindo!"
+      redirect_to :dashboard_index
     else
-      flash[:notice] = "Verifique sua matricula e senha, pois não foi encontrado ninguém."
+      flash[:notice] = "Verifique sua matrícula e senha!"
       redirect_to :root
     end
   end

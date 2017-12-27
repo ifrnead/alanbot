@@ -1,5 +1,7 @@
 class AlvosController < ApplicationController
+  before_action :auth_required
   before_action :set_alvo, only: [:show, :edit, :update, :destroy]
+  
   def index
       @alvos = Alvo.all
   end

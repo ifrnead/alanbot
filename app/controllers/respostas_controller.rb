@@ -2,8 +2,8 @@ require 'json'
 
 class RespostasController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [ :callback ]
+  before_action :auth_required, except: [ :callback ]
   before_action :set_resposta, only: [:show, :edit, :update, :destroy]
-  
   
   def callback
     @resposta = Resposta.buscar(JSON.parse(request.body.read))
@@ -16,7 +16,6 @@ class RespostasController < ApplicationController
   
   def index
     @respostas = Resposta.all
-   
   end
 
 

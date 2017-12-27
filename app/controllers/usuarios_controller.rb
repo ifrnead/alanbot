@@ -1,4 +1,5 @@
 class UsuariosController < ApplicationController
+  before_action :auth_required, except: [ :callback ]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   # GET /usuarios

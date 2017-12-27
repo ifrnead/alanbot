@@ -1,6 +1,6 @@
 class InformacoesController < ApplicationController
+  before_action :auth_required
   before_action :set_informacao, only: [:show, :edit, :update, :destroy]
-
   
   def index
     @informacoes = Informacao.all

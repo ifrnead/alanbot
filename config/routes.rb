@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'sessoes#new'
+  root 'dashboard#index'
+  get 'sessoes/new', as: :login
   post 'sessoes/logar'
+  get 'sessoes/deslogar', as: :deslogar
   resources :usuarios
    get 'dashboard/index'
     

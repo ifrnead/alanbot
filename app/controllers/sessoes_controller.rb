@@ -17,6 +17,9 @@ class SessoesController < ApplicationController
     end
   end
   
-  
+  def deslogar
+    session[:usuario_id] = nil
+    redirect_to :root
+  end
  
 end

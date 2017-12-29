@@ -5,6 +5,7 @@
 <table  class="table table-striped table-bordered   table-hover">
   <thead>
     <tr>
+      <th>Nome</th>
       <th>Matricula</th>
       <th>Token</th>
       <th>Ver</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @usuarios.each do |usuario| %>
       <tr>
+        <td><%= usuario.nome %></td>
         <td><%= usuario.matricula %></td>
         <td><%= usuario.token %></td>
         <td><%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, usuario ,{class: "del_hover"} %></td>

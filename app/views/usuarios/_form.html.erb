@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field form-group">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :usuario_nome ,  class: 'form-control' %>
+  </div>
 
   <div class="field form-group">
     <%= form.label :matricula %>

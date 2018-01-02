@@ -9,11 +9,9 @@ class SessoesController < ApplicationController
     
     if @usuario
       session[:usuario_id] = @usuario.id
-      flash[:notice] = "Seja bem vindo!"
-      redirect_to :dashboard_index
+      redirect_to dashboard_path, notice: 'Seja bem vindo!'
     else
-      flash[:notice] = "Verifique sua matrícula e senha!"
-      redirect_to :root
+      redirect_to root_path, alert: "Verifique sua matrícula e senha!"
     end
   end
   

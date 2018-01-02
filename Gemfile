@@ -7,6 +7,10 @@ end
 
 gem "sentry-raven"
 gem "rest-client"
+gem 'bootstrap', '~> 4.0.0.beta3'
+gem 'jquery-rails'
+gem 'simple_form'
+gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

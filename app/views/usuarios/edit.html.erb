@@ -1,6 +1,13 @@
-<h1>Editar Usuário</h1>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'user-circle' %> Editar Usuário</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('eye', text: 'Detalhar'), @usuario, class: "btn btn-info" %> 
+      <%= link_to fa_icon('undo', text: 'Voltar'), usuarios_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', usuario: @usuario %>
-
-<%= link_to 'Ver', @usuario  ,class: "btn btn-outline-info"%> 
-<%= link_to 'Voltar', usuarios_path ,class: "btn btn-outline-info"%>
+<%= render 'form' %>

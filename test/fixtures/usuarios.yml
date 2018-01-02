@@ -2,8 +2,8 @@
 
 one:
   matricula: MyString
-  token: MyString
+  nome: MyString
 
 two:
   matricula: MyString
-  token: MyString
+  nome: MyString

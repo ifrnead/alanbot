@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20171218002727) do
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "matricula"
-    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if session[:usuario_id] 
       @usuario = Usuario.find(session[:usuario_id])
     else
-      redirect_to login_path, notice: 'Autenticação necessária!'
+      redirect_to login_path, alert: 'Autenticação necessária!'
     end
   end
 

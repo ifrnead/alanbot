@@ -1,18 +1,17 @@
-<p id="notice"><%= notice %></p>
-<h1>Usuário</h1>
-<p>
-  <strong>Matricula:</strong>
-  <%= @usuario.nome %>
-</p>
-<p>
-  <strong>Matricula:</strong>
-  <%= @usuario.matricula %>
-</p>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'user-circle' %> Usuário</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('pencil', text: 'Editar'), edit_usuario_path(@usuario), class: "btn btn-info"%> 
+      <%= link_to fa_icon('trash', text: 'Apagar'), @usuario, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-info" %>
+      <%= link_to fa_icon('undo', text: 'Voltar'), usuarios_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Token:</strong>
-  <%= @usuario.token %>
-</p>
-
-<%= link_to 'Editar', edit_usuario_path(@usuario) ,class: "btn btn-outline-info"%> 
-<%= link_to 'Voltar', usuarios_path ,class: "btn btn-outline-info"%>
+<dl>
+  <dt>Nome</dt><dd><%= @usuario.nome %></dd>
+  <dt>Matricula</dt><dd><%= @usuario.matricula %></dd>
+</dl>

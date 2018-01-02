@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'sessoes/logar'
   get 'sessoes/deslogar', as: :deslogar
   resources :usuarios
-   get 'dashboard/index'
+   get 'dashboard/index', as: :dashboard
     
     resources :respostas
     

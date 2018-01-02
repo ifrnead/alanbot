@@ -3,7 +3,6 @@ class CreateUsuarios < ActiveRecord::Migration[5.1]
     create_table :usuarios do |t|
       t.string :nome
       t.string :matricula
-      t.string :token
 
       t.timestamps
     end

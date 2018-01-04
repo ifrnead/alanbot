@@ -1,5 +1,12 @@
-<h1>Nova Resposta</h1>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'envelope' %> Novo Resposta</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('undo', text: 'Voltar'), respostas_path, class: "btn btn-info"%>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', resposta: @resposta %>
-
-<%= link_to 'Voltar', respostas_path,class: 'btn btn-outline-info' %>
+<%= render 'form' %>

@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
-<h1>Resposta</h1>
-<p>
-  <strong>Mensagem:</strong>
-  <%= @resposta.mensagem %>
-</p>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'envelope' %> Resposta</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('pencil', text: 'Editar'), edit_resposta_path(@resposta), class: "btn btn-info"%> 
+      <%= link_to fa_icon('trash', text: 'Apagar'), @resposta, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-info" %>
+      <%= link_to fa_icon('undo', text: 'Voltar'), respostas_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Alvo:</strong>
-  <%= @resposta.alvo.nome %>
-</p>
-
-<p>
-  <strong>Informação:</strong>
-  <%= @resposta.informacao.tipo %>
-</p>
-
-<%= link_to 'Editar', edit_resposta_path(@resposta) ,class: "btn btn-outline-info"%> 
-<%= link_to 'Voltar', respostas_path ,class: "btn btn-outline-info"%>
+<dl>
+  <dt>Mensagem</dt><dd><%= @resposta.mensagem %></dd>
+  <dt>Alvo</dt><dd><%= @resposta.alvo.nome %></dd>
+  <dt>Informação</dt><dd><%= @resposta.informacao.tipo %></dd>
+</dl>

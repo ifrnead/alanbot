@@ -1,5 +1,12 @@
-<h1>Novo Alvo</h1>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'bullseye' %> Novo Alvo</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('undo', text: 'Voltar'), alvos_path, class: "btn btn-info"%>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', alvo: @alvo %>
-
-<%= link_to 'Back', alvos_path, class: "btn btn-outline-info" %>
+<%= render 'form' %>

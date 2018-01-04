@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
-<h1>Alvo</h1>
-<p>
-  <strong>Alvo:</strong>
-  <%= @alvo.nome %>
-</p>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'bullseye' %> Alvo</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('pencil', text: 'Editar'), edit_alvo_path(@alvo), class: "btn btn-info"%> 
+      <%= link_to fa_icon('trash', text: 'Apagar'), @alvo, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-info" %>
+      <%= link_to fa_icon('undo', text: 'Voltar'), alvos_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Editar', edit_alvo_path(@alvo),class: "btn btn-outline-info" %> 
-<%= link_to 'Voltar', alvos_path,class: "btn btn-outline-info" %>
+<dl>
+  <dt>Nome</dt><dd><%= @alvo.nome %></dd>
+ 
+</dl>

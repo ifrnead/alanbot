@@ -1,6 +1,13 @@
-<h1>Editar informação</h1>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'info-circle' %> Editar Informação</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('eye', text: 'Detalhar'), @informacao, class: "btn btn-info" %> 
+      <%= link_to fa_icon('undo', text: 'Voltar'), informacoes_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', informacao: @informacao %>
-
-<%= link_to 'Ver', @informacao ,class: "btn btn-outline-info"%> 
-<%= link_to 'Voltar', informacoes_path,class: "btn btn-outline-info" %>
+<%= render 'form' %>

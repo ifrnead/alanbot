@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :polos
   root 'dashboard#index'
   get 'sessoes/new', as: :login
   post 'sessoes/logar'

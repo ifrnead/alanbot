@@ -1,0 +1,5 @@
+<%= simple_form_for(@polo) do |f| %>
+  <%= f.input :nome, error: 'Campo obrigatório!' %>
+
+  <%= f.button :submit, 'Enviar', class: 'btn-primary' %>
+<% end %>

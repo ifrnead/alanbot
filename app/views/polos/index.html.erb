@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'building' %> Polos</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%= link_to fa_icon('plus', text: 'Novo Polo'), new_polo_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
+
+<% if @polos.empty? %>
+  <p>Nenhum polo encontrado.</p>
+<% else %>
+  <table  class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @polos.each do |polo| %>
+        <tr>
+          <td><%= polo.nome %></td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Opções">
+              <%= link_to fa_icon('eye', text: 'Detalhar'), polo, class: "btn btn-sm btn-info" %>
+              <%= link_to fa_icon('pencil', text: 'Editar'), edit_polo_path(polo), class: "btn btn-sm btn-info" %>
+              <%= link_to fa_icon('trash', text: 'Apagar'), polo, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-sm btn-info" %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

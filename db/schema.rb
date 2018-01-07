@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107032018) do
+ActiveRecord::Schema.define(version: 20180107134544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20180107032018) do
   create_table "mensagens", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "texto"
+    t.bigint "resposta_id"
+    t.text "json"
+    t.index ["resposta_id"], name: "index_mensagens_on_resposta_id"
   end
 
   create_table "polos", force: :cascade do |t|

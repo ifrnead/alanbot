@@ -4,7 +4,7 @@
   </div>
   <div class="col-sm text-right">
     <div class="btn-group" role="group" aria-label="Opções">
-      <%= link_to fa_icon('pencil', text: 'Editar'), edit_mensagem_path(@mensagem), class: "btn btn-info"%> 
+      <%= link_to fa_icon('pencil', text: 'Editar'), edit_mensagem_path(@mensagem), class: "btn btn-info"%>
       <%= link_to fa_icon('trash', text: 'Apagar'), @mensagem, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-info" %>
       <%= link_to fa_icon('undo', text: 'Voltar'), mensagem_path, class: "btn btn-info" %>
     </div>
@@ -13,6 +13,13 @@
 
 <dl>
   <dt>Texto</dt><dd><%= @mensagem.texto %></dd>
-  <dt>Resposta</dt><dd><%= @mensagem.resposta.mensagem %></dd>
-  <dt>Json</dt><dd><%= @mensagem.json %></dd>  
+  <dt>Resposta</dt>
+  <dd>
+    <% if @mensagem.resposta %>
+      <%= @mensagem.resposta.mensagem %>
+    <% else %>
+      Nenhuma resposta encontrada.
+    <% end %>
+  </dd>
+  <dt>Json</dt><dd><%= @mensagem.json %></dd>
 </dl>

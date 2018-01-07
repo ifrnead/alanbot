@@ -17,7 +17,6 @@
       <tr>
         <th>Texto</th>
         <th>Resposta</th>
-        <th>Json</th>
         <th>Opções</th>
       </tr>
     </thead>
@@ -25,8 +24,13 @@
       <% @mensagens.each do |mensagem| %>
         <tr>
           <td><%= mensagem.texto %></td>
-          <td><%= mensagem.resposta.mensagem %></td>
-          <td><%= mensagem.json %></td>
+          <td>
+            <% if mensagem.resposta %>
+              <%= mensagem.resposta.mensagem %>
+            <% else %>
+              -
+            <% end %>
+          </td>
           <td>
             <div class="btn-group" role="group" aria-label="Opções">
               <%= link_to fa_icon('eye', text: 'Detalhar'), mensagem, class: "btn btn-sm btn-info" %>

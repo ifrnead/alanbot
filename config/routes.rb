@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mensagens
   resources :polos
   root 'dashboard#index'
   get 'sessoes/new', as: :login

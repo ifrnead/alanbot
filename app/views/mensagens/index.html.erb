@@ -1,25 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm">
+    <h1><%= fa_icon 'bell' %> Mensagens</h1>
+  </div>
+  <div class="col-sm text-right">
+    <div class="btn-group" role="group" aria-label="Opções">
+      <%#= link_to fa_icon('plus', text: 'Nova Mensagem'), new_mensagem_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<h1>Mensagens</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @mensagens.each do |mensagem| %>
+<% if @mensagens.empty? %>
+  <p>Nenhuma mensagem encontrada.</p>
+<% else %>
+  <table  class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= link_to 'Show', mensagem %></td>
-        <td><%= link_to 'Edit', edit_mensagem_path(mensagem) %></td>
-        <td><%= link_to 'Destroy', mensagem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Texto</th>
+        <th>Resposta</th>
+        <th>Json</th>
+        <th>Opções</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Mensagem', new_mensagem_path %>
+    </thead>
+    <tbody>
+      <% @mensagens.each do |mensagem| %>
+        <tr>
+          <td><%= mensagem.texto %></td>
+          <td><%= mensagem.resposta.mensagem %></td>
+          <td><%= mensagem.json %></td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Opções">
+              <%= link_to fa_icon('eye', text: 'Detalhar'), mensagem, class: "btn btn-sm btn-info" %>
+              <%= link_to fa_icon('pencil', text: 'Editar'), edit_mensagem_path(mensagem), class: "btn btn-sm btn-info" %>
+              <%= link_to fa_icon('trash', text: 'Apagar'), mensagem, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-sm btn-info" %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

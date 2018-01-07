@@ -1,23 +1,12 @@
 require 'json'
 
 class RespostasController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [ :callback ]
   before_action :auth_required, except: [ :callback ]
   before_action :set_resposta, only: [:show, :edit, :update, :destroy]
-  
-  def callback
-    @resposta = Resposta.buscar(JSON.parse(request.body.read))
-    if @resposta
-      render 'callback.json'
-    else
-      render 'not_found.json'
-    end
-  end
-  
+
   def index
     @respostas = Resposta.all
   end
-
 
   def show
   end
@@ -57,7 +46,6 @@ class RespostasController < ApplicationController
     end
   end
 
-
   def destroy
     @resposta.destroy
     respond_to do |format|
@@ -65,14 +53,13 @@ class RespostasController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
-  
+
     def set_resposta
       @resposta = Resposta.includes(:alvo, :informacao).find(params[:id])
     end
 
-    
     def resposta_params
       params.require(:resposta).permit(:mensagem, :alvo_id, :informacao_id)
     end

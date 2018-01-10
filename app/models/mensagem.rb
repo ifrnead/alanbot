@@ -2,6 +2,9 @@ class Mensagem < ApplicationRecord
     belongs_to :resposta, optional: true
     before_create :buscar_resposta
 
+    scope :atendidas, -> { where('resposta_id is not null') }
+    scope :nao_atendidas, -> { where(resposta_id: nil) }
+
     def self.parse(json)
       params = JSON.parse(json)
       Mensagem.create({

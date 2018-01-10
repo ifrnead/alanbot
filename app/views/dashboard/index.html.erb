@@ -1,1 +1,6 @@
 <h1><%= fa_icon 'navicon' %> Dashboard</h1>
+<hr></hr>
+<div>
+    <h3 style="text-align: center;">Mensagens</h3>
+    <%= pie_chart({"Atendidas" => Mensagem.atendidas.count, "Não Atendidas" => Mensagem.nao_atendidas.count})  %>
+</div>

@@ -5,7 +5,7 @@ class MensagensController < ApplicationController
 
   def callback
     mensagem = Mensagem.parse(request.body.read)
-
+   
     if mensagem.resposta
       @resposta = mensagem.resposta
       render 'callback.json'

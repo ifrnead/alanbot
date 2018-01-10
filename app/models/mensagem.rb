@@ -7,6 +7,7 @@ class Mensagem < ApplicationRecord
 
     def self.parse(json)
       params = JSON.parse(json)
+    
       Mensagem.create({
         texto: params['result']['resolvedQuery'],
         json: params.to_json

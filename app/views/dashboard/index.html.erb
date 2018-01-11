@@ -1,6 +1,18 @@
 <h1><%= fa_icon 'navicon' %> Dashboard</h1>
-<hr></hr>
-<div>
-    <h3 style="text-align: center;">Mensagens</h3>
-    <%= pie_chart({"Atendidas" => Mensagem.atendidas.count, "Não Atendidas" => Mensagem.nao_atendidas.count})  %>
+
+<div class="row">
+  <div class="col">
+    <h3>Mensagens por dia</h3>
+    <p>Apresentar gráfico de mensagens por dia aqui</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3>Mensagens</h3>
+    <%= grafico_mensagens_atentidas %>
+  </div>
+  <div class="col">
+    <h3>Algum outro gráfico</h3>
+  </div>
 </div>

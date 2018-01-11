@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>Alan Turing Bot</title>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
-  
+
   <body>
     <%= render partial: 'layouts/menu' if usuario_autenticado? %>
     <div class="container">
